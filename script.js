@@ -1,4 +1,12 @@
 (function(){
+  // Fallback for any browser without WebP support: swap to the PNG copy.
+  document.addEventListener('error', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && /\.webp($|\?)/.test(t.src)){
+      t.src = t.src.replace(/\.webp($|\?)/, '.png$1');
+    }
+  }, true);
+
   var FLAVOURS = [
     {id:'malt', name:'Malt', color:'var(--malt)', hex:'#C9922F', desc:"The one that started it all: the classic, full-bodied malt character of beer, brewed for flavour, not alcohol.", notes:['Roasted malt','Caramel','Smooth finish']},
     {id:'ginger', name:'Ginger', color:'var(--ginger)', hex:'#FF6B2C', desc:"Sharp, spiced and wide awake. Ginger brings the heat for whoever wants their Coolberg with an edge.", notes:['Spiced warmth','Zesty bite','Bold finish']},
@@ -19,8 +27,11 @@
     if(!heroStage) return;
     FLAVOURS.forEach(function(f, i){
       var img = document.createElement('img');
-      img.src = 'assets/flavours/cutout/'+f.id+'.png';
+      img.src = 'assets/flavours/cutout/'+f.id+'.webp';
       img.alt = 'Coolberg '+f.name+', 0.0% ABV bottle';
+      img.width = 535; img.height = 1400;
+      img.decoding = 'async';
+      if(i===0){ img.setAttribute('fetchpriority','high'); } else { img.loading = 'eager'; }
       img.className = 'hero-stage-img'+(i===0 ? ' is-active' : '');
       heroStage.appendChild(img);
       heroStageImgs.push(img);
@@ -70,14 +81,7 @@
     btn.setAttribute('data-id', f.id);
     btn.setAttribute('aria-selected', i===0 ? 'true':'false');
     btn.innerHTML = '<span class="idx">0'+(i+1)+'</span><span class="dot" style="background:'+f.color+';"></span><span class="name">'+f.name+'</span>';
-    btn.addEventListener('click', function(){
-      setFlavour(f.id);
-      if(window.matchMedia('(max-width:760px)').matches){
-        requestAnimationFrame(function(){
-          document.getElementById('flDisplay').scrollIntoView({behavior:'smooth', block:'center'});
-        });
-      }
-    });
+    btn.addEventListener('click', function(){ setFlavour(f.id); });
     flList.appendChild(btn);
   });
 
@@ -91,7 +95,7 @@
     document.getElementById('flName').textContent = f.name;
     document.getElementById('flDesc').textContent = f.desc;
     var flImg = document.getElementById('flBottleImg');
-    flImg.src = 'assets/flavours/cutout/'+f.id+'.png';
+    flImg.src = 'assets/flavours/cutout/'+f.id+'.webp';
     flImg.alt = 'Coolberg '+f.name+', 0.0% ABV bottle';
     var notesWrap = document.getElementById('flNotes');
     notesWrap.innerHTML = '';

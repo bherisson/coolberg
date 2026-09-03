@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="assets/flavours/cutout/malt.webp">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="#top" class="logo"><img src="assets/coolberg_main_logo.png" alt="Coolberg" class="logo-mark"></a>
+    <a href="#top" class="logo"><img src="assets/coolberg_main_logo.webp" alt="Coolberg" class="logo-mark" width="589" height="747" decoding="async"></a>
     <div class="nav-links" role="navigation" aria-label="Primary">
       <a href="#top">Home</a>
       <a href="#meet">Discover</a>
@@ -51,9 +52,16 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-tag" aria-hidden="true"><b>MRU · ARRIVED</b><span>20.1609°S 57.5012°E</span></div>
   <div class="wrap hero-inner">
-    <div class="hero-copy">
+    <div class="hero-headline">
       <span class="eyebrow">Coolberg Mauritius · Non-Alcoholic, Full Flavour</span>
       <h1>CHEERS TO GOOD TIMES.<br><em>COOLBERG DEBARK DAN MORIS.</em></h1>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-blob"></div>
+      <div class="hero-bottle-stage" id="heroBottleStage"></div>
+      <div class="hero-flavour-tag" id="heroFlavourTag"><span class="hft-dot" id="heroFlavourDot"></span><span id="heroFlavourName">Malt</span></div>
+    </div>
+    <div class="hero-details">
       <p class="hero-sub">No buzz. Just cool. Seven bold flavours, 0.0% ABV, made for wherever your evening in Mauritius takes you.</p>
       <div class="hero-ctas">
         <a href="#flavours" class="btn btn-primary">Explore Coolberg</a>
@@ -64,11 +72,6 @@
         <div><b>7</b><span>Bold flavours</span></div>
         <div><b>MU</b><span>Now on the island</span></div>
       </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-blob"></div>
-      <div class="hero-bottle-stage" id="heroBottleStage"></div>
-      <div class="hero-flavour-tag" id="heroFlavourTag"><span class="hft-dot" id="heroFlavourDot"></span><span id="heroFlavourName">Malt</span></div>
     </div>
   </div>
   <div class="hero-scrollcue" aria-hidden="true"><span>Keep going</span><span class="line"></span></div>
@@ -89,13 +92,13 @@
     </div>
     <div class="meet-visual reveal">
       <div class="mp-cans" aria-hidden="true">
-        <img class="mp-bottle" src="assets/flavours/cutout/malt.png" alt="">
-        <img class="mp-bottle" src="assets/flavours/cutout/ginger.png" alt="">
-        <img class="mp-bottle" src="assets/flavours/cutout/mint.png" alt="">
-        <img class="mp-bottle mp-bottle-lead" src="assets/flavours/cutout/peach.png" alt="">
-        <img class="mp-bottle" src="assets/flavours/cutout/cranberry.png" alt="">
-        <img class="mp-bottle" src="assets/flavours/cutout/strawberry.png" alt="">
-        <img class="mp-bottle" src="assets/flavours/cutout/apple.png" alt="">
+        <img class="mp-bottle" src="assets/flavours/cutout/malt.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle" src="assets/flavours/cutout/ginger.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle" src="assets/flavours/cutout/mint.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle mp-bottle-lead" src="assets/flavours/cutout/peach.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle" src="assets/flavours/cutout/cranberry.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle" src="assets/flavours/cutout/strawberry.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
+        <img class="mp-bottle" src="assets/flavours/cutout/apple.webp" alt="" width="535" height="1400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -114,7 +117,7 @@
       <div class="fl-list" id="flList" role="tablist" aria-label="Flavours"></div>
       <div class="fl-display" id="flDisplay">
         <div class="fl-bottle-wrap">
-          <img class="fl-bottle-photo" id="flBottleImg" src="assets/flavours/cutout/malt.png" alt="Coolberg Malt, 0.0% ABV bottle">
+          <img class="fl-bottle-photo" id="flBottleImg" src="assets/flavours/cutout/malt.webp" alt="Coolberg Malt, 0.0% ABV bottle" width="535" height="1400" loading="lazy" decoding="async">
         </div>
         <div class="fl-copy">
           <h3 class="fl-name" id="flName">Malt</h3>
@@ -310,8 +313,10 @@
         <h3>General enquiries</h3>
         <p>Questions about Coolberg, flavours, or where to find us? We'd love to hear from you.</p>
         <div class="ci-list">
-          <div><b>Email</b>hello@coolberg.mu</div>
-          <div><b>Instagram</b>@coolberg.mauritius</div>
+          <div><b>Email</b><a href="mailto:care@wolfe.mu">care@wolfe.mu</a></div>
+          <div><b>Instagram</b><a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener">@coolberg.mauritius</a></div>
+          <div><b>Facebook</b><a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener">/coolberg.mauritius</a></div>
+          <div><b>TikTok</b><a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener">@coolberg.mauritius</a></div>
           <div><b>Based in</b>Riche Terre Business Park, Riche Terre</div>
         </div>
       </div>
@@ -362,10 +367,16 @@
 <footer class="pattern-weave-inv">
   <div class="wrap">
     <div class="foot-top">
-      <div class="foot-brand"><b>COOLBERG</b><p>Zero alcohol. Full-on flavour. From Diwali lights to Sega drums to Spring Festival lanterns, made for every kind of Mauritian moment.</p></div>
+      <div class="foot-brand"><b>COOLBERG</b><p>Zero alcohol. Full-on flavour. From Diwali lights to Sega drums to Spring Festival lanterns, made for every kind of Mauritian moment.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener" aria-label="Coolberg on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H8.5v3.5H11V21h3.5v-6.5H17l.5-3.5h-3V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23"/><path d="M14 4c.5 2.4 2.2 4 4.6 4.2"/></svg></a>
+        </div>
+      </div>
       <div class="foot-col"><h5>Explore</h5><a href="#meet">Discover</a><a href="#flavours">Flavours</a><a href="#life">The Coolberg Life</a><a href="#story">Our Story</a></div>
       <div class="foot-col"><h5>Get Coolberg</h5><a href="#contact">Become a Stockist</a><a href="#faq">FAQ</a></div>
-      <div class="foot-col"><h5>Contact</h5><span>hello@coolberg.mu</span><span>trade@coolberg.mu</span><span>@coolberg.mauritius</span></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:care@wolfe.mu">care@wolfe.mu</a><a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener">TikTok</a></div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Coolberg Mauritius · Riche Terre. 0.0% ABV, enjoy responsibly.</span>
