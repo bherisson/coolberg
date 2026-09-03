@@ -187,7 +187,7 @@ section{position:relative;}
 .fl-display{position:relative;border-radius:var(--radius-lg);background:var(--card);box-shadow:var(--shadow);padding:44px;min-height:540px;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;overflow:hidden;}
 .fl-display::before{content:"";position:absolute;inset:0;background:var(--fl-color,var(--gold));opacity:.12;transition:background 1s;}
 .fl-bottle-wrap{position:relative;display:flex;align-items:center;justify-content:center;z-index:1;}
-.fl-bottle-photo{width:250px;max-width:100%;transition:transform .5s cubic-bezier(.16,.8,.24,1);filter:drop-shadow(0 22px 22px rgba(0,0,0,.22));}
+.fl-bottle-photo{width:250px;height:auto;max-width:100%;transition:transform .5s cubic-bezier(.16,.8,.24,1);filter:drop-shadow(0 22px 22px rgba(0,0,0,.22));}
 .fl-bottle-wrap:hover .fl-bottle-photo{transform:scale(1.035);}
 .fl-copy{position:relative;z-index:1;}
 .fl-copy .fl-name{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1;margin-bottom:14px;}
