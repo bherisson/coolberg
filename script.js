@@ -70,7 +70,14 @@
     btn.setAttribute('data-id', f.id);
     btn.setAttribute('aria-selected', i===0 ? 'true':'false');
     btn.innerHTML = '<span class="idx">0'+(i+1)+'</span><span class="dot" style="background:'+f.color+';"></span><span class="name">'+f.name+'</span>';
-    btn.addEventListener('click', function(){ setFlavour(f.id); });
+    btn.addEventListener('click', function(){
+      setFlavour(f.id);
+      if(window.matchMedia('(max-width:760px)').matches){
+        requestAnimationFrame(function(){
+          document.getElementById('flDisplay').scrollIntoView({behavior:'smooth', block:'center'});
+        });
+      }
+    });
     flList.appendChild(btn);
   });
 
