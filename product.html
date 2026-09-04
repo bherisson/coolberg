@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coolberg — Product</title>
+<meta name="description" content="Shop Coolberg flavours online in Mauritius.">
+<link rel="icon" type="image/png" href="assets/coolberg_main_logo.png">
+<link rel="apple-touch-icon" href="assets/coolberg_main_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html#top" class="logo"><img src="assets/coolberg_main_logo.webp" alt="Coolberg" class="logo-mark" width="589" height="747" decoding="async"></a>
+    <div class="nav-links" role="navigation" aria-label="Primary">
+      <a href="index.html#top">Home</a>
+      <a href="index.html#meet">Discover</a>
+      <a href="index.html#flavours">Flavours</a>
+      <a href="index.html#life">The Coolberg Life</a>
+      <a href="shop.html" aria-current="page">Shop</a>
+    </div>
+    <div class="nav-cta">
+      <button class="cart-toggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 7h13.2l-1.4 8.4a2 2 0 0 1-2 1.6H8.6a2 2 0 0 1-2-1.7L5 4H2.5"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg>
+        <span class="cart-badge">0</span>
+      </button>
+      <a href="shop.html" class="btn btn-primary" style="padding:12px 22px;">Shop Coolberg</a>
+      <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#top">Home</a>
+  <a href="index.html#meet">Discover</a>
+  <a href="index.html#flavours">Flavours</a>
+  <a href="index.html#life">The Coolberg Life</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="shop.html" class="btn btn-primary mm-cta">Shop Coolberg</a>
+</div>
+
+<main id="top">
+  <div class="wrap" style="padding-top:150px;">
+    <a href="shop.html" class="pd-back">&larr; Back to Shop</a>
+  </div>
+  <section class="sec-pad" style="padding-top:24px;" id="pdSection"></section>
+</main>
+
+<footer class="pattern-weave-inv">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand"><b>COOLBERG</b><p>Zero alcohol. Full-on flavour. From Diwali lights to Sega drums to Spring Festival lanterns, made for every kind of Mauritian moment.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener" aria-label="Coolberg on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H8.5v3.5H11V21h3.5v-6.5H17l.5-3.5h-3V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23"/><path d="M14 4c.5 2.4 2.2 4 4.6 4.2"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Explore</h5><a href="index.html#meet">Discover</a><a href="index.html#flavours">Flavours</a><a href="index.html#life">The Coolberg Life</a><a href="index.html#story">Our Story</a></div>
+      <div class="foot-col"><h5>Get Coolberg</h5><a href="shop.html">Shop Coolberg</a><a href="index.html#faq">FAQ</a></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:care@wolfe.mu">care@wolfe.mu</a><a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener">TikTok</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Coolberg Mauritius · Riche Terre. 0.0% ABV, enjoy responsibly.</span>
+      <span>Coolberg Mauritius Digital Prototype</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shop.js"></script>
+<script>
+(function(){
+  var S = window.CoolbergShop;
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id') || 'malt';
+  var p = S.findProduct(id) || S.PRODUCTS[0];
+  document.title = 'Coolberg ' + p.name + (p.variant ? '' : ' Flavour') + ' — Shop Coolberg';
+
+  var section = document.getElementById('pdSection');
+
+  var specsHtml = Object.keys(S.SPECS).map(function(k){
+    var v = S.SPECS[k];
+    if(p.variant && k === 'Pack Size') v = '24 bottles (6 flavours of choice)';
+    return '<div class="pd-spec-row"><span>' + k + '</span><b>' + v + '</b></div>';
+  }).join('');
+
+  var pickerHtml = '';
+  if(p.variant){
+    pickerHtml =
+      '<div class="pd-picker">' +
+        '<div class="pd-picker-head"><b>Choose ' + p.variantMax + ' flavours</b><span id="pdPickerCount">0 / ' + p.variantMax + ' selected</span></div>' +
+        '<div class="pd-swatches" id="pdSwatches">' +
+          p.variantOptions.map(function(fid){
+            var fp = S.findProduct(fid);
+            return '<button type="button" class="pd-swatch" data-fid="' + fid + '" style="--sw:' + fp.color + ';">' +
+              '<span class="pd-swatch-dot"></span>' + fp.name +
+            '</button>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+  }
+
+  section.innerHTML =
+    '<div class="wrap pd-layout">' +
+      '<div class="pd-media reveal" style="background:color-mix(in srgb, ' + p.color + ' 16%, var(--card));">' +
+        '<img src="' + p.img + '" alt="Coolberg ' + p.name + '" width="700" height="700" decoding="async">' +
+      '</div>' +
+      '<div class="pd-info reveal">' +
+        '<span class="eyebrow">' + (p.variant ? 'Mix Your Own' : 'Coolberg ' + p.name) + '</span>' +
+        '<h1 class="pd-title">Coolberg ' + p.name + (p.variant ? '' : ' Flavour') + '</h1>' +
+        '<div class="pd-price">' + S.fmtPrice(p.price) + ' <span>incl. VAT</span></div>' +
+        '<span class="tag" style="border-color:' + p.color + ';color:' + p.color + ';margin-top:4px;">' + p.pack + '</span>' +
+        '<p class="pd-desc">' + p.desc + '</p>' +
+        '<div class="pd-taste"><b>Taste profile</b><span>' + p.taste + '</span></div>' +
+        '<div class="pd-taste"><b>Best for</b><span>' + p.use + '</span></div>' +
+        pickerHtml +
+        '<div class="pd-buy">' +
+          '<span class="qty-stepper" id="pdQty">' +
+            '<button class="qs-btn qs-minus" type="button" aria-label="Decrease quantity">−</button>' +
+            '<span class="qs-val">1</span>' +
+            '<button class="qs-btn qs-plus" type="button" aria-label="Increase quantity">+</button>' +
+          '</span>' +
+          '<button class="btn btn-primary" id="pdAddBtn" style="flex:1;justify-content:center;">Add to cart</button>' +
+        '</div>' +
+        '<p class="pd-note" id="pdNote"></p>' +
+        '<div class="pd-specs">' + specsHtml + '</div>' +
+      '</div>' +
+    '</div>';
+
+  var qty = 1;
+  var qtyEl = document.getElementById('pdQty');
+  qtyEl.querySelector('.qs-minus').addEventListener('click', function(){
+    qty = Math.max(1, qty-1);
+    qtyEl.querySelector('.qs-val').textContent = qty;
+  });
+  qtyEl.querySelector('.qs-plus').addEventListener('click', function(){
+    qty += 1;
+    qtyEl.querySelector('.qs-val').textContent = qty;
+  });
+
+  var selected = [];
+  var addBtn = document.getElementById('pdAddBtn');
+  var note = document.getElementById('pdNote');
+
+  if(p.variant){
+    var swatches = document.querySelectorAll('.pd-swatch');
+    var countLabel = document.getElementById('pdPickerCount');
+    swatches.forEach(function(sw){
+      sw.addEventListener('click', function(){
+        var fid = sw.dataset.fid;
+        var idx = selected.indexOf(fid);
+        if(idx > -1){
+          selected.splice(idx, 1);
+          sw.classList.remove('picked');
+        } else {
+          if(selected.length >= p.variantMax){ return; }
+          selected.push(fid);
+          sw.classList.add('picked');
+        }
+        countLabel.textContent = selected.length + ' / ' + p.variantMax + ' selected';
+      });
+    });
+  }
+
+  addBtn.addEventListener('click', function(){
+    if(p.variant && selected.length !== p.variantMax){
+      note.textContent = 'Please choose exactly ' + p.variantMax + ' flavours before adding to cart.';
+      note.classList.add('pd-note-warn');
+      return;
+    }
+    note.classList.remove('pd-note-warn');
+    S.addToCart(p.id, qty, p.variant ? selected.slice() : null);
+    note.textContent = 'Added to cart ✓';
+    S.openDrawer();
+  });
+})();
+</script>
+</body>
+</html>

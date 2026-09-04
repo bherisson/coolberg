@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — Coolberg Mauritius</title>
+<meta name="description" content="Review your Coolberg order and check out.">
+<link rel="icon" type="image/png" href="assets/coolberg_main_logo.png">
+<link rel="apple-touch-icon" href="assets/coolberg_main_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html#top" class="logo"><img src="assets/coolberg_main_logo.webp" alt="Coolberg" class="logo-mark" width="589" height="747" decoding="async"></a>
+    <div class="nav-links" role="navigation" aria-label="Primary">
+      <a href="index.html#top">Home</a>
+      <a href="index.html#meet">Discover</a>
+      <a href="index.html#flavours">Flavours</a>
+      <a href="index.html#life">The Coolberg Life</a>
+      <a href="shop.html">Shop</a>
+    </div>
+    <div class="nav-cta">
+      <button class="cart-toggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 7h13.2l-1.4 8.4a2 2 0 0 1-2 1.6H8.6a2 2 0 0 1-2-1.7L5 4H2.5"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg>
+        <span class="cart-badge">0</span>
+      </button>
+      <a href="shop.html" class="btn btn-primary" style="padding:12px 22px;">Shop Coolberg</a>
+      <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#top">Home</a>
+  <a href="index.html#meet">Discover</a>
+  <a href="index.html#flavours">Flavours</a>
+  <a href="index.html#life">The Coolberg Life</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html" aria-current="page">Cart</a>
+  <a href="shop.html" class="btn btn-primary mm-cta">Shop Coolberg</a>
+</div>
+
+<main id="top">
+  <section class="sec-pad" style="padding-top:150px;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Your order</span>
+        <h2>YOUR CART.</h2>
+      </div>
+
+      <div class="cart-page" id="cartPage">
+        <div class="cart-page-items" id="cartPageItems"></div>
+
+        <aside class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="cart-summary-row"><span>Subtotal</span><b id="csSubtotal">Rs 0</b></div>
+          <div class="cart-summary-row"><span>Delivery</span><b>Calculated at confirmation</b></div>
+          <div class="cart-summary-total"><span>Total</span><b id="csTotal">Rs 0</b></div>
+
+          <form class="cart-checkout-form" id="checkoutForm">
+            <div class="field"><label for="ckName">Full name</label><input id="ckName" type="text" placeholder="Your name" required></div>
+            <div class="field"><label for="ckPhone">Phone</label><input id="ckPhone" type="tel" placeholder="+230 ..." required></div>
+            <div class="field"><label for="ckEmail">Email</label><input id="ckEmail" type="email" placeholder="you@email.com" required></div>
+            <div class="field"><label for="ckAddress">Delivery address</label><textarea id="ckAddress" placeholder="Street, town, region" required></textarea></div>
+            <button class="btn btn-primary" type="submit" id="checkoutBtn" style="width:100%;justify-content:center;margin-top:8px;">Checkout</button>
+            <p class="form-note">This is a prototype checkout, no payment is processed yet.</p>
+          </form>
+        </aside>
+      </div>
+
+      <div class="cart-confirm" id="cartConfirm" hidden>
+        <span class="eyebrow" style="justify-content:center;">Order received</span>
+        <h2>THANKS, <span id="ccName"></span>!</h2>
+        <p>Your Coolberg order has been noted. This is a prototype checkout, so nothing was charged, but a real order flow would confirm delivery details by email or phone next.</p>
+        <a href="shop.html" class="btn btn-primary">Keep exploring Coolberg</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pattern-weave-inv">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand"><b>COOLBERG</b><p>Zero alcohol. Full-on flavour. From Diwali lights to Sega drums to Spring Festival lanterns, made for every kind of Mauritian moment.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener" aria-label="Coolberg on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H8.5v3.5H11V21h3.5v-6.5H17l.5-3.5h-3V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener" aria-label="Coolberg on TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.2a3.3 3.3 0 1 1-2.6-3.23"/><path d="M14 4c.5 2.4 2.2 4 4.6 4.2"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Explore</h5><a href="index.html#meet">Discover</a><a href="index.html#flavours">Flavours</a><a href="index.html#life">The Coolberg Life</a><a href="index.html#story">Our Story</a></div>
+      <div class="foot-col"><h5>Get Coolberg</h5><a href="shop.html">Shop Coolberg</a><a href="index.html#faq">FAQ</a></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:care@wolfe.mu">care@wolfe.mu</a><a href="https://www.instagram.com/coolberg.mauritius/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/coolberg.mauritius" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@coolberg.mauritius" target="_blank" rel="noopener">TikTok</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Coolberg Mauritius · Riche Terre. 0.0% ABV, enjoy responsibly.</span>
+      <span>Coolberg Mauritius Digital Prototype</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shop.js"></script>
+<script>
+(function(){
+  var S = window.CoolbergShop;
+
+  function render(){
+    var cart = S.readCart();
+    var wrap = document.getElementById('cartPageItems');
+    var cartPage = document.getElementById('cartPage');
+    var confirm = document.getElementById('cartConfirm');
+    confirm.hidden = true;
+    cartPage.hidden = false;
+
+    if(!cart.length){
+      wrap.innerHTML = '<p class="cd-empty">Your cart is empty. <a href="shop.html" style="text-decoration:underline;">Browse the range</a> and add a few flavours.</p>';
+      document.getElementById('checkoutBtn').disabled = true;
+    } else {
+      document.getElementById('checkoutBtn').disabled = false;
+      wrap.innerHTML = cart.map(function(item){
+        var p = S.findProduct(item.id);
+        if(!p) return '';
+        var key = S.lineKey(item.id, item.flavours);
+        var flavourLine = item.flavours ? '<span class="cd-flavours">' + item.flavours.map(S.cap).join(', ') + '</span>' : '';
+        return '<div class="cart-page-item">' +
+          '<img src="' + p.img + '" alt="' + p.name + '" width="90" height="90" loading="lazy">' +
+          '<div class="cd-item-info">' +
+            '<b>Coolberg ' + p.name + (p.variant ? '' : ' Flavour') + '</b>' + flavourLine +
+            '<span class="shop-card-pack">' + p.pack + '</span>' +
+            '<div class="cd-item-row">' +
+              '<span class="qty-stepper" data-key="' + key + '">' +
+                '<button class="qs-btn qs-minus" aria-label="Decrease quantity">−</button>' +
+                '<span class="qs-val">' + item.qty + '</span>' +
+                '<button class="qs-btn qs-plus" aria-label="Increase quantity">+</button>' +
+              '</span>' +
+              '<b class="cd-item-price">' + S.fmtPrice(p.price * item.qty) + '</b>' +
+            '</div>' +
+          '</div>' +
+          '<button class="cd-remove" data-key="' + key + '" aria-label="Remove item">&times;</button>' +
+        '</div>';
+      }).join('');
+    }
+
+    document.getElementById('csSubtotal').textContent = S.fmtPrice(S.cartTotal());
+    document.getElementById('csTotal').textContent = S.fmtPrice(S.cartTotal());
+
+    wrap.querySelectorAll('.qs-minus').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var key = btn.closest('.qty-stepper').dataset.key;
+        var item = S.readCart().filter(function(i){ return S.lineKey(i.id,i.flavours) === key; })[0];
+        if(item){ if(item.qty<=1){ S.removeFromCart(key); } else { S.updateQty(key, item.qty-1); } render(); }
+      });
+    });
+    wrap.querySelectorAll('.qs-plus').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var key = btn.closest('.qty-stepper').dataset.key;
+        var item = S.readCart().filter(function(i){ return S.lineKey(i.id,i.flavours) === key; })[0];
+        if(item){ S.updateQty(key, item.qty+1); render(); }
+      });
+    });
+    wrap.querySelectorAll('.cd-remove').forEach(function(btn){
+      btn.addEventListener('click', function(){ S.removeFromCart(btn.dataset.key); render(); });
+    });
+  }
+  render();
+
+  document.getElementById('checkoutForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!S.readCart().length) return;
+    document.getElementById('ccName').textContent = document.getElementById('ckName').value || 'there';
+    document.getElementById('cartPage').hidden = true;
+    document.getElementById('cartConfirm').hidden = false;
+    localStorage.removeItem('coolberg_cart_v1');
+    S.renderDrawerItems && S.renderDrawerItems();
+    document.querySelectorAll('.cart-badge').forEach(function(b){ b.textContent='0'; b.style.display='none'; });
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>

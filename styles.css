@@ -195,13 +195,13 @@ section{position:relative;}
 .fl-cta{margin-top:28px;}
 
 @media (max-width:760px){
-  .fl-display{grid-template-columns:minmax(84px,104px) 1fr;grid-template-rows:auto auto;grid-template-areas:"list bottle" "copy copy";padding:26px 20px;min-height:0;text-align:center;gap:16px;align-items:center;}
+  .fl-display{grid-template-columns:minmax(90px,auto) 1fr;grid-template-rows:auto auto;grid-template-areas:"list bottle" "copy copy";padding:26px 20px;min-height:0;text-align:center;gap:16px;align-items:center;}
   .fl-bottle-wrap{align-self:center;}
   .fl-bottle-photo{width:118px;}
-  .fl-list{flex-direction:column;flex-wrap:nowrap;gap:8px;align-self:center;margin-bottom:0;}
-  .fl-item{flex:none;padding:8px 8px;border-radius:3px 10px 3px 10px;justify-content:flex-start;}
+  .fl-list{flex-direction:column;flex-wrap:nowrap;gap:8px;align-self:center;align-items:flex-start;margin-bottom:0;}
+  .fl-item{flex:none;width:auto;padding:8px 10px;border-radius:3px 10px 3px 10px;justify-content:flex-start;}
   .fl-item .idx{display:none;}
-  .fl-item .name{font-size:11.5px;white-space:normal;line-height:1.15;}
+  .fl-item .name{font-size:11.5px;white-space:nowrap;line-height:1.15;}
   .fl-item .dot{width:9px;height:9px;}
   .fl-item[aria-selected="true"]{transform:none;}
   .fl-copy{margin-top:4px;}
@@ -247,13 +247,15 @@ section{position:relative;}
 #life .eyebrow::before{background:var(--gold);}
 #life .sec-head p{color:rgba(247,241,226,.66);}
 .life-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(247,241,226,.14);border-radius:var(--radius-lg);overflow:hidden;}
-.life-card{background:var(--fg);padding:36px 26px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;transition:background .35s;}
-.life-card:hover{background:#1f1a10;}
-.life-card .lc-glow{position:absolute;top:26px;left:26px;width:46px;height:46px;border-radius:50%;}
-.life-card h4{font-size:26px;font-weight:800;color:var(--bg);margin-bottom:10px;}
-.life-card p{color:rgba(247,241,226,.62);font-size:14.5px;}
+.life-card{background:var(--fg);position:relative;overflow:hidden;aspect-ratio:1/1;}
+.life-card .lc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,.8,.24,1);}
+.life-card:hover .lc-img{transform:scale(1.06);}
+.life-card .lc-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,8,4,0) 38%, rgba(10,8,4,.92) 100%);}
+.life-card .lc-body{position:relative;z-index:1;height:100%;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;}
+.life-card h4{font-size:24px;font-weight:800;color:var(--bg);margin-bottom:8px;}
+.life-card p{color:rgba(247,241,226,.72);font-size:14px;line-height:1.5;}
 @media (max-width:900px){ .life-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .life-grid{grid-template-columns:1fr;} .life-card{min-height:220px;} }
+@media (max-width:560px){ .life-grid{grid-template-columns:1fr;} .life-card{aspect-ratio:16/9;} }
 
 /* ============ MAURITIUS — ARRIVAL STAMP ============ */
 #mauritius{padding:130px 0;overflow:hidden;}
@@ -367,6 +369,8 @@ section{position:relative;}
 .contact-info .ci-list b{display:block;color:var(--fg-faint);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
 .contact-info .ci-list a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,border-color .2s;}
 .contact-info .ci-list a:hover{color:var(--gold-deep);border-color:var(--gold-deep);}
+.contact-info .ci-list a.ci-social{display:inline-flex;align-items:center;gap:8px;border-bottom:none;}
+.contact-info .ci-list a.ci-social svg{width:16px;height:16px;flex:none;}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .field{display:flex;flex-direction:column;gap:8px;}
 .field.full{grid-column:1/-1;}
