@@ -91,9 +91,16 @@
   var S = window.CoolbergShop;
   var grid = document.getElementById('shopGrid');
   grid.innerHTML = S.PRODUCTS.map(function(p){
-    var cta = p.variant
-      ? '<button class="btn btn-outline shop-card-btn" data-select="' + p.id + '">Select Options</button>'
-      : '<button class="btn btn-primary shop-card-btn" data-add="' + p.id + '">Add to cart</button>';
+    var buyRow = p.variant
+      ? '<button class="btn btn-outline shop-card-btn" data-select="' + p.id + '" style="width:100%;justify-content:center;">Select Options</button>'
+      : '<div class="shop-card-buy">' +
+          '<span class="qty-stepper shop-card-qty" data-pid="' + p.id + '">' +
+            '<button type="button" class="qs-btn qs-minus" aria-label="Decrease quantity">−</button>' +
+            '<span class="qs-val">1</span>' +
+            '<button type="button" class="qs-btn qs-plus" aria-label="Increase quantity">+</button>' +
+          '</span>' +
+          '<button class="btn btn-primary shop-card-btn" data-add="' + p.id + '" style="flex:1;justify-content:center;">Add to cart</button>' +
+        '</div>';
     return '<article class="shop-card reveal">' +
       '<a href="product.html?id=' + p.id + '" class="shop-card-media" style="background:color-mix(in srgb, ' + p.color + ' 16%, var(--card));">' +
         '<img src="' + p.img + '" alt="Coolberg ' + p.name + '" loading="lazy" decoding="async">' +
@@ -102,16 +109,34 @@
         '<span class="tag" style="border-color:' + p.color + ';color:' + p.color + ';">' + (p.variant ? 'Mix Your Own' : p.name) + '</span>' +
         '<a href="product.html?id=' + p.id + '" class="shop-card-name">' + (p.variant ? 'Coolberg ' + p.name : 'Coolberg ' + p.name + ' Flavour') + '</a>' +
         '<span class="shop-card-pack">' + p.pack + '</span>' +
-        '<div class="shop-card-foot"><b class="shop-card-price">' + S.fmtPrice(p.price) + '</b>' + cta + '</div>' +
+        '<b class="shop-card-price">' + S.fmtPrice(p.price) + '</b>' +
+        buyRow +
       '</div>' +
     '</article>';
   }).join('');
 
+  grid.querySelectorAll('.shop-card-qty').forEach(function(stepper){
+    var val = 1;
+    var valEl = stepper.querySelector('.qs-val');
+    stepper.querySelector('.qs-minus').addEventListener('click', function(){
+      val = Math.max(1, val - 1);
+      valEl.textContent = val;
+    });
+    stepper.querySelector('.qs-plus').addEventListener('click', function(){
+      val += 1;
+      valEl.textContent = val;
+    });
+  });
+
   grid.querySelectorAll('[data-add]').forEach(function(btn){
     btn.addEventListener('click', function(){
-      S.addToCart(btn.dataset.add, 1);
+      var card = btn.closest('.shop-card');
+      var stepper = card.querySelector('.shop-card-qty');
+      var qty = stepper ? parseInt(stepper.querySelector('.qs-val').textContent, 10) || 1 : 1;
+      S.addToCart(btn.dataset.add, qty);
       btn.textContent = 'Added ✓';
       setTimeout(function(){ btn.textContent = 'Add to cart'; }, 1200);
+      if(stepper){ stepper.querySelector('.qs-val').textContent = '1'; }
       S.openDrawer();
     });
   });
